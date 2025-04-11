@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 imgElement.classList.add('gallery-item');
                 categoryGalleryContainer.appendChild(imgElement);
               });
-              // Připojíme lightbox funkci k načteným fotkám
+              // Nastavení lightboxu po načtení fotek
               attachLightboxEvents();
             } else {
               categoryGalleryContainer.innerHTML = `<p>Žádné fotky v této kategorii.</p>`;
@@ -80,20 +80,46 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   
-    /* ----- Lightbox pro zvětšení fotek ----- */
+    /* ----- Lightbox s navigací ----- */
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.lightbox .close');
+    const prevBtn = document.querySelector('.lightbox .prev');
+    const nextBtn = document.querySelector('.lightbox .next');
+  
+    // Globální proměnné pro uchování aktuální galerie a indexu
+    let currentGalleryItems = [];
+    let currentIndex = 0;
   
     function attachLightboxEvents(){
-      const galleryItems = document.querySelectorAll('.gallery-item');
-      galleryItems.forEach(item => {
+      currentGalleryItems = document.querySelectorAll('.gallery-item');
+      currentGalleryItems.forEach((item, index) => {
         item.addEventListener('click', () => {
-          lightbox.style.display = 'flex';
-          lightboxImg.src = item.src;
-          lightboxImg.alt = item.alt;
+          currentIndex = index;
+          openLightbox(item.src, item.alt);
         });
       });
+    }
+  
+    function openLightbox(src, alt) {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+    }
+  
+    function showImageAtIndex(index) {
+      // Zajistíme správné přetečení indexu
+      if(index < 0) {
+        currentIndex = currentGalleryItems.length - 1;
+      } else if (index >= currentGalleryItems.length) {
+        currentIndex = 0;
+      } else {
+        currentIndex = index;
+      }
+      // Aktualizace obrázku v lightboxu
+      const selectedItem = currentGalleryItems[currentIndex];
+      lightboxImg.src = selectedItem.src;
+      lightboxImg.alt = selectedItem.alt;
     }
   
     if(closeBtn){
@@ -102,6 +128,21 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   
+    if(prevBtn){
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // zamezí zavření lightboxu při kliknutí na šipku
+        showImageAtIndex(currentIndex - 1);
+      });
+    }
+  
+    if(nextBtn){
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImageAtIndex(currentIndex + 1);
+      });
+    }
+  
+    // Zavření lightboxu při kliknutí mimo obrázek
     if(lightbox){
       lightbox.addEventListener('click', (e) => {
         if(e.target === lightbox){
@@ -109,5 +150,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
     }
+  
+    // Navigace pomocí klávesnice (šipky vlevo/vpravo)
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if(e.key === 'ArrowLeft'){
+          showImageAtIndex(currentIndex - 1);
+        } else if(e.key === 'ArrowRight'){
+          showImageAtIndex(currentIndex + 1);
+        } else if(e.key === 'Escape'){
+          lightbox.style.display = 'none';
+        }
+      }
+    });
   });
   
