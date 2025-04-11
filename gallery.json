@@ -10,6 +10,47 @@
                     "za-93.jpg",
                     "za-95.jpg"
                 ],
+    "Antarktida":  [
+                       "antarkti-pro-skoly-1-0.jpg",
+                       "antarkti-pro-skoly-16.jpg",
+                       "antarkti-pro-skoly-177.jpg",
+                       "antarkti-pro-skoly-197-1.jpg",
+                       "antarkti-pro-skoly-231.jpg",
+                       "antarkti-pro-skoly-34.jpg",
+                       "antarkti-pro-skoly-46.jpg",
+                       "antarkti-pro-skoly-47-1.jpg"
+                   ],
+    "Česká příroda":  [
+                          "DSC0236-u.jpg",
+                          "DSC0265-u.jpg",
+                          "DSC0277-u0.jpg",
+                          "DSC1372.JPG",
+                          "DSC4290-export-u-LR.jpg",
+                          "DSC4550-3-u.jpg",
+                          "DSC4581-6-u.jpg",
+                          "DSC5720-u.jpg",
+                          "DSC5854.jpg"
+                      ],
+    "Norsko":  [
+                   "norsko-11-125.jpg",
+                   "norsko-11-128.jpg",
+                   "norsko-11-13.jpg",
+                   "norsko-11-156.jpg",
+                   "norsko-11-16.jpg",
+                   "norsko-11-20.jpg",
+                   "norsko-11-25.jpg",
+                   "norsko-11-251-P1080799.jpg",
+                   "norsko-11-32.jpg",
+                   "norsko-11-45.jpg"
+               ],
+    "Rumunsko":  [
+                     "RUMUNY-193.jpg",
+                     "RUMUNY-34.jpg",
+                     "RUMUNY-460.jpg",
+                     "zbytek-14.JPG",
+                     "zbytek-8.JPG",
+                     "zbytek-92.jpg"
+                 ],
     "Bolivia":  [
                     "bol-zeny-172.jpg",
                     "bolivia-altiplano-andes-0.jpg",
@@ -64,15 +105,5 @@
                     "bolivia-altiplano-andes-7.jpg",
                     "bolivia-altiplano-andes-8.jpg",
                     "bolivia-altiplano-andes-9.jpg"
-                ],
-    "Antarktida":  [
-                       "antarkti-pro-skoly-1-0.jpg",
-                       "antarkti-pro-skoly-16.jpg",
-                       "antarkti-pro-skoly-177.jpg",
-                       "antarkti-pro-skoly-197-1.jpg",
-                       "antarkti-pro-skoly-231.jpg",
-                       "antarkti-pro-skoly-34.jpg",
-                       "antarkti-pro-skoly-46.jpg",
-                       "antarkti-pro-skoly-47-1.jpg"
-                   ]
+                ]
 }
