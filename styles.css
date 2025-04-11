@@ -266,33 +266,61 @@
     opacity: 0.8;
   }
   
- /* Ovládací šipky v lightboxu */
-.lightbox .prev,
-.lightbox .next {
-  position: absolute;
-  top: 50%;
-  padding: 16px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-  cursor: pointer;
-  user-select: none;
-  transition: 0.3s;
-}
-
-.lightbox .prev {
-  left: 20px;
-}
-
-.lightbox .next {
-  right: 20px;
-}
-
-.lightbox .prev:hover,
-.lightbox .next:hover {
-  color: #E67E22;
-}
-
+  /* Lightbox styl */
+  .lightbox {
+    display: none; /* skryto, dokud se neaktivuje */
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+  }
+  
+  .lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Ovládací šipky v lightboxu */
+  .lightbox .prev,
+  .lightbox .next {
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+  }
+  
+  .lightbox .prev {
+    left: 20px;
+  }
+  
+  .lightbox .next {
+    right: 20px;
+  }
+  
+  .lightbox .prev:hover,
+  .lightbox .next:hover {
+    color: #E67E22;
+  }
   
   /* Patička */
   footer {
