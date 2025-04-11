@@ -1,0 +1,296 @@
+/* Reset základních stylů */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Navigační menu */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    color: #E67E22;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-left: 1rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .nav-links a:hover {
+    color: #E67E22;
+  }
+  
+  /* Hamburger menu pro mobil */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 4px;
+  }
+  
+  /* Hero sekce */
+  #hero {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    background: #E67E22;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background: #cf6d1f;
+  }
+  
+  /* Sekce */
+  .section {
+    padding: 4rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  /* Karty pro aktivity */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .card h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .card p {
+    padding: 0 1rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Knihy */
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .book {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .book img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .book h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .book p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Aktuality */
+  .news {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .news-item {
+    background: #fff;
+    border-left: 5px solid #E67E22;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .news-item .news-date {
+    font-size: 0.9rem;
+    color: #999;
+  }
+  
+  .news-item h3 {
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+  }
+  
+  /* Galerie */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  
+  .gallery-grid img:hover {
+    opacity: 0.8;
+  }
+  
+  /* Lightbox styl */
+  .lightbox {
+    display: none; /* skryto, dokud se neaktivuje */
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+  }
+  
+  .lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Patička */
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  footer a {
+    color: #E67E22;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responzivní úpravy */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 1rem 0;
+    }
+  
+    .nav-links li {
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  
