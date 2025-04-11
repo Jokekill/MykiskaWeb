@@ -268,14 +268,14 @@
   
   /* Lightbox styl */
   .lightbox {
-    display: none; /* skryto, dokud se neaktivuje */
+    display: none;                    /* skryto, dokud se neaktivuje */
     position: fixed;
-    z-index: 2000;
+    z-index: 9999;                    /* vysoké číslo, aby překrylo vše */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.9); /* tmavý overlay */
     justify-content: center;
     align-items: center;
   }

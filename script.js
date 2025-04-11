@@ -101,11 +101,16 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   
+
     function openLightbox(src, alt) {
-      lightbox.style.display = 'flex';
-      lightboxImg.src = src;
-      lightboxImg.alt = alt;
-    }
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+      
+        lightbox.style.display = 'flex';  // Zásadní – aby se lightbox stal flex kontejnerem
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+      }
+      
   
     function showImageAtIndex(index) {
       // Zajistíme správné přetečení indexu
