@@ -11,7 +11,6 @@
   <header id="header">
     <nav>
       <div class="logo">
-        <!-- Logo (buď textové nebo obrázkové, uprav dle potřeby) -->
         <h1>Martin Mykiska</h1>
       </div>
       <ul class="nav-links">
@@ -22,7 +21,6 @@
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
-      <!-- Hamburguer menu pro mobil -->
       <div class="hamburger">
         <div class="line"></div>
         <div class="line"></div>
@@ -40,10 +38,11 @@
     </div>
   </section>
 
-  <!-- Sekce Aktivity -->
+  <!-- Další sekce – Aktivity, Knihy, Aktuality … (viz předchozí návrh) -->
   <section id="aktivity" class="section">
     <h2>Co dělám</h2>
     <div class="cards">
+      <!-- Příklad karet, zde se můžeš inspirovat předchozím kódem -->
       <div class="card">
         <img src="images/cestovani.jpg" alt="Cestování">
         <h3>Cestování</h3>
@@ -52,81 +51,30 @@
       <div class="card">
         <img src="images/pruvodcovstvi.jpg" alt="Průvodcovství">
         <h3>Průvodcovství</h3>
-        <p>Profesní průvodce s mnohaletou praxí – zájezdy, expedice a víc.</p>
+        <p>Zkušený průvodce na zájezdech, expedicích a víc.</p>
       </div>
       <div class="card">
         <img src="images/fotografie.jpg" alt="Fotografie">
         <h3>Fotografie</h3>
-        <p>Momentky a krajiny zachycené objektivem v kvalitě a s příběhem.</p>
+        <p>Kvalitní momentky a krajiny zachycené objektivem s příběhem.</p>
       </div>
       <div class="card">
         <img src="images/knihy.jpg" alt="Knihy">
         <h3>Knihy</h3>
-        <p>Cestopisy a příběhy z dalekých cest. Objednej si je jednoduše emailem.</p>
+        <p>Cestopisy a příběhy z dalekých cest. Objednej si je emailem.</p>
       </div>
     </div>
   </section>
 
-  <!-- Sekce Knihy -->
-  <section id="knihy" class="section">
-    <h2>Knihy</h2>
-    <div class="book-grid">
-      <!-- Příklad jedné knihy; opakuj dle počtu publikací -->
-      <div class="book">
-        <img src="images/kniha1.jpg" alt="Kniha 1">
-        <h3>Název knihy 1</h3>
-        <p>Krátký popisek knihy.</p>
-        <a class="btn" href="mailto:martin@mykiska.cz?subject=Objednávka Knihy 1">Objednat</a>
-      </div>
-      <div class="book">
-        <img src="images/kniha2.jpg" alt="Kniha 2">
-        <h3>Název knihy 2</h3>
-        <p>Krátký popisek knihy.</p>
-        <a class="btn" href="mailto:martin@mykiska.cz?subject=Objednávka Knihy 2">Objednat</a>
-      </div>
-      <!-- Přidej další položky dle potřeby -->
-    </div>
-  </section>
-
-  <!-- Sekce Aktuality -->
-  <section id="aktuality" class="section">
-    <h2>Aktuality</h2>
-    <div class="news">
-      <article class="news-item">
-        <span class="news-date">05.05.2025</span>
-        <h3>Nadcházející přednáška</h3>
-        <p>Přijďte se inspirovat cestovatelskými zážitky z Antarktidy.</p>
-      </article>
-      <article class="news-item">
-        <span class="news-date">10.05.2025</span>
-        <h3>Nový zájezd</h3>
-        <p>Zažijte dobrodružství na vlastní kůži s průvodcovskou skupinou.</p>
-      </article>
-      <!-- Přidej další aktuality dle potřeby -->
-    </div>
-  </section>
-
-  <!-- Sekce Galerie -->
+  <!-- Sekce Galerie – Zobrazení kategorií -->
   <section id="galerie" class="section">
     <h2>Galerie</h2>
-    <div class="gallery-grid">
-      <!-- Předpokládáme, že fotky jsou umístěny ve složce "fotogalery" -->
-      <!-- Příklad obrázku v galerii -->
-      <img src="fotogalery/photo1.jpg" alt="Popis fotky 1" class="gallery-item">
-      <img src="fotogalery/photo2.jpg" alt="Popis fotky 2" class="gallery-item">
-      <img src="fotogalery/photo3.jpg" alt="Popis fotky 3" class="gallery-item">
-      <img src="fotogalery/photo4.jpg" alt="Popis fotky 4" class="gallery-item">
-      <!-- Přidej další fotky dle potřeby -->
+    <div id="gallery-categories" class="gallery-categories">
+      <!-- Kategorie se dynamicky načtou zde pomocí JS -->
     </div>
   </section>
 
-  <!-- Modal pro lightbox galerii -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" src="" alt="">
-  </div>
-
-  <!-- Sekce Kontakt (např. patička) -->
+  <!-- Patička / Kontakt -->
   <footer id="kontakt">
     <p>© 2025 Martin Mykiska</p>
     <p><a href="mailto:martin@mykiska.cz">martin@mykiska.cz</a></p>

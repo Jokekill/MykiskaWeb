@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galerie - Kategorie</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigační menu (stejné jako u index.html) -->
+  <header id="header">
+    <nav>
+      <div class="logo">
+        <h1>Martin Mykiska</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#hero">Úvod</a></li>
+        <li><a href="index.html#aktivity">Aktivity</a></li>
+        <li><a href="index.html#knihy">Knihy</a></li>
+        <li><a href="index.html#aktuality">Aktuality</a></li>
+        <li><a href="index.html#galerie">Galerie</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Sekce galerie kategorie -->
+  <section id="gallery-category" class="section">
+    <h2 id="category-title">Kategorie galerie</h2>
+    <div id="category-gallery" class="gallery-grid">
+      <!-- Fotky budou načteny dynamicky podle vybrané kategorie -->
+    </div>
+  </section>
+
+  <!-- Lightbox pro zobrazení zvětšeného obrázku -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- Patička -->
+  <footer id="kontakt">
+    <p>© 2025 Martin Mykiska</p>
+    <p><a href="mailto:martin@mykiska.cz">martin@mykiska.cz</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
