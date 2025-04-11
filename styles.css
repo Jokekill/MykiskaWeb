@@ -372,7 +372,6 @@ html {
     text-decoration: underline;
   }
   
-  /* Responzivní úpravy */
   @media (max-width: 768px) {
     .nav-links {
       display: none;
@@ -385,6 +384,11 @@ html {
       padding: 1rem 0;
     }
   
+    /* Přidáme pravidlo pro zobrazení menu, když je třída nav-active přidána */
+    .nav-links.nav-active {
+      display: flex;
+    }
+  
     .nav-links li {
       margin: 0.5rem 0;
       text-align: center;
@@ -394,6 +398,7 @@ html {
       display: flex;
     }
   }
+  
 
   
   
