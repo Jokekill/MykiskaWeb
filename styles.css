@@ -579,3 +579,20 @@ footer a:hover {
     display: flex;
   }
 }
+
+/* Facebook Feed Section */
+#facebook {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fb-page {
+  margin: 0 auto;
+  display: block;
+}
+
+#fb-root {
+  display: flex;
+  justify-content: center;
+}
