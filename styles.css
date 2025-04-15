@@ -600,24 +600,29 @@ footer a:hover {
 
 .fb-page {
   margin: 0 auto;
-  display: block;
-  width: 800px !important;  /* Větší šířka pro desktop */
-  max-width: 100%;         /* Zajistí, že nepřeteče na menších obrazovkách */
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 800px !important;
 }
 
 .fb-page > span {
-  max-width: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
 }
 
 .fb-page iframe {
-  max-width: 100% !important;
+  margin: 0 auto !important;
 }
 
-/* Media query pro mobilní zařízení */
 @media (max-width: 768px) {
+  #facebook {
+    padding: 0;
+  }
+  
   .fb-page {
     width: 100% !important;
     min-width: 180px !important;
-    padding-left: 25px;
   }
 }
