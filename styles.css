@@ -578,6 +578,15 @@ footer a:hover {
   .hamburger {
     display: flex;
   }
+
+  #facebook {
+    padding: 0;  /* Odstraní padding na mobilech */
+  }
+
+  .fb-page {
+    width: 100% !important;
+    min-width: 180px !important;
+  }
 }
 
 /* Facebook Feed Section */
@@ -585,11 +594,23 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  overflow: hidden;  /* Zabrání horizontálnímu scrollování */
 }
 
 .fb-page {
   margin: 0 auto;
   display: block;
+  width: 100% !important;  /* Přepíše výchozí šířku Facebooku */
+  max-width: 500px;       /* Maximální šířka na větších obrazovkách */
+}
+
+.fb-page > span {
+  width: 100% !important;
+}
+
+.fb-page iframe {
+  width: 100% !important;
 }
 
 #fb-root {
