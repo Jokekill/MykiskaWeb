@@ -1,4 +1,41 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Slideshow functionality
+    const slides = document.querySelectorAll('.hero-bg');
+    const prevButton = document.querySelector('.prev-slide');
+    const nextButton = document.querySelector('.next-slide');
+    let currentSlide = 0;
+    let slideInterval = setInterval(nextSlide, 10000); // Change slide every 10 seconds
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    function prevSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    // Reset interval when manually changing slides
+    function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 10000);
+    }
+
+    if(prevButton && nextButton) {
+      prevButton.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+      });
+
+      nextButton.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+      });
+    }
+
     // Hamburger menu pro mobilní navigaci
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -169,4 +206,3 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
-  

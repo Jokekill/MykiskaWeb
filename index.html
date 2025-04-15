@@ -16,8 +16,8 @@
       <ul class="nav-links">
         <li><a href="#hero">Úvod</a></li>
         <li><a href="#aktivity">Aktivity</a></li>
-        <li><a href="#knihy">Knihy</a></li>
         <li><a href="#aktuality">Aktuality</a></li>
+        <li><a href="#knihy">Knihy</a></li>
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
@@ -31,14 +31,20 @@
 
   <!-- Úvodní sekce (Hero) -->
   <section id="hero">
-    <img class="hero-bg" src="fotogalery\uvod.jpg" alt="Úvodní fotka">
+    <div class="slideshow">
+      <img class="hero-bg active" src="fotogalery/uvod1.jpg" alt="Úvodní fotka 1">
+      <img class="hero-bg" src="fotogalery/uvod2.jpg" alt="Úvodní fotka 2">
+      <img class="hero-bg" src="fotogalery/uvod3.jpg" alt="Úvodní fotka 3">
+      <img class="hero-bg" src="fotogalery/uvod4.jpg" alt="Úvodní fotka 4">
+      <button class="slide-btn prev-slide">&#10094;</button>
+      <button class="slide-btn next-slide">&#10095;</button>
+    </div>
     <div class="hero-content">
       <h2>Martin Mykiska</h2>
       <p>Cestovatel, průvodce, fotograf a spisovatel</p>
     </div>
-      <!-- Šipka pro scrollování -->
     <div class="hero-arrow">
-        <a href="#aktivity" class="scroll-arrow">&#x2193;</a>
+      <a href="#aktivity" class="scroll-arrow">&#x2193;</a>
     </div>
   </section>
 
@@ -71,25 +77,7 @@
   </section>
 
 
-    <section id="knihy" class="section">
-        <h2>Knihy</h2>
-        <div class="books">
-        <div class="book">
-            <img src="images/kniha1.jpg" alt="Kniha 1">
-            <h3>Název knihy 1</h3>
-            <p>Popis knihy 1.</p>
-        </div>
-        <div class="book">
-            <img src="images/kniha2.jpg" alt="Kniha 2">
-            <h3>Název knihy 2</h3>
-            <p>Popis knihy 2.</p>
-        </div>
-        <!-- Další knihy ... -->
-        </div>
 
-
-
-    </section>
 
 
     <section id="aktuality" class="section">
@@ -113,6 +101,26 @@
         </div>
       </section>
       
+
+      <section id="knihy" class="section">
+        <h2>Knihy</h2>
+        <div class="books">
+        <div class="book">
+            <img src="images/kniha1.jpg" alt="Kniha 1">
+            <h3>Název knihy 1</h3>
+            <p>Popis knihy 1.</p>
+        </div>
+        <div class="book">
+            <img src="images/kniha2.jpg" alt="Kniha 2">
+            <h3>Název knihy 2</h3>
+            <p>Popis knihy 2.</p>
+        </div>
+        <!-- Další knihy ... -->
+        </div>
+
+
+
+    </section>
 
   <!-- Sekce Galerie – Zobrazení kategorií -->
   <section id="galerie" class="section">
