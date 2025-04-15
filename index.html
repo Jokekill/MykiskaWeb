@@ -118,7 +118,7 @@
   <section id="minikino" class="section">
     <h2>Martinovo Minikino</h2>
     <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/WVxEMjeCbHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.ceskatelevize.cz/porady/1096911352-objektiv/225411030400330/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </section>
 
@@ -127,7 +127,7 @@
     <h2>Nejnovější příspěvky</h2>
     <div id="fb-root"></div>
     <div class="fb-page" 
-      data-href="https://www.facebook.com/MartinMykiskaCestyKnihyBesedy"
+      data-href="https://www.facebook.com/mykiska"
       data-tabs="timeline"
       data-width="500"
       data-height="700"
@@ -138,54 +138,7 @@
     </div>
   </section>
 
-  <!-- Reviews Section -->
-  <section id="reviews" class="section">
-    <h2>Recenze a Hodnocení</h2>
-    <div class="reviews-tabs">
-      <button class="tab-btn active" data-tab="books">Knihy</button>
-      <button class="tab-btn" data-tab="tours">Zájezdy</button>
-      <button class="tab-btn" data-tab="lectures">Přednášky</button>
-    </div>
-    <div class="reviews-content">
-      <div id="reviews-display"></div>
-      <form id="review-form" class="review-form">
-        <select name="category" required>
-          <option value="">Vyberte kategorii</option>
-          <option value="books">Knihy</option>
-          <option value="tours">Zájezdy</option>
-          <option value="lectures">Přednášky</option>
-        </select>
-        <input type="text" name="name" placeholder="Vaše jméno" required>
-        <div class="rating">
-          <input type="number" name="rating" min="1" max="5" required>
-          <span>/5 hvězdiček</span>
-        </div>
-        <textarea name="review" placeholder="Vaše hodnocení..." required></textarea>
-        <button type="submit">Odeslat hodnocení</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Contact Form -->
-  <section id="contact-form" class="section">
-    <h2>Kontaktní formulář</h2>
-    <form id="contact" class="contact-form">
-      <div class="form-group">
-        <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
-      </div>
-      <div class="form-group">
-        <input type="email" id="email" name="email" placeholder="Váš email" required>
-      </div>
-      <div class="form-group">
-        <input type="text" id="subject" name="subject" placeholder="Předmět" required>
-      </div>
-      <div class="form-group">
-        <textarea id="message" name="message" placeholder="Vaše zpráva" required></textarea>
-      </div>
-      <button type="submit">Odeslat zprávu</button>
-    </form>
-  </section>
-
+  
   <!-- Sekce Galerie – Zobrazení kategorií -->
   <section id="galerie" class="section">
     <h2>Galerie</h2>
@@ -193,6 +146,56 @@
       <!-- Kategorie se dynamicky načtou zde pomocí JS -->
     </div>
   </section>
+
+<!-- Reviews Section -->
+<section id="reviews" class="section">
+  <h2>Recenze a Hodnocení</h2>
+  <div class="reviews-tabs">
+    <button class="tab-btn active" data-tab="books">Knihy</button>
+    <button class="tab-btn" data-tab="tours">Zájezdy</button>
+    <button class="tab-btn" data-tab="lectures">Přednášky</button>
+  </div>
+  <div class="reviews-content">
+    <div id="reviews-display"></div>
+    <form id="review-form" class="review-form">
+      <select name="category" required>
+        <option value="">Vyberte kategorii</option>
+        <option value="books">Knihy</option>
+        <option value="tours">Zájezdy</option>
+        <option value="lectures">Přednášky</option>
+      </select>
+      <input type="text" name="name" placeholder="Vaše jméno" required>
+      <div class="rating">
+        <input type="number" name="rating" min="1" max="5" required>
+        <span>/5 hvězdiček</span>
+      </div>
+      <textarea name="review" placeholder="Vaše hodnocení..." required></textarea>
+      <button type="submit">Odeslat hodnocení</button>
+    </form>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section id="contact-form" class="section">
+  <h2>Kontaktní formulář</h2>
+  <form id="contact" class="contact-form">
+    <div class="form-group">
+      <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" name="email" placeholder="Váš email" required>
+    </div>
+    <div class="form-group">
+      <input type="text" id="subject" name="subject" placeholder="Předmět" required>
+    </div>
+    <div class="form-group">
+      <textarea id="message" name="message" placeholder="Vaše zpráva" required></textarea>
+    </div>
+    <button type="submit">Odeslat zprávu</button>
+  </form>
+</section>
+
+
 
   <!-- Patička / Kontakt -->
   <footer id="kontakt">
