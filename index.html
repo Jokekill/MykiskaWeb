@@ -76,51 +76,115 @@
     </div>
   </section>
 
+  <section id="aktuality" class="section">
+    <h2>Aktuality</h2>
+    <div class="news">
+      <article class="news-item">
+        <span class="news-date">Od 12.09.2025 do 19.09.2025</span>
+        <h3>Týdenní zájezd do Peru</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel leo ac metus elementum gravida. Proin vitae felis in dolor blandit semper.</p>
+      </article>
+      <article class="news-item">
+        <span class="news-date">Od 20.09.2025 do 03.10.2025</span>
+        <h3>Dvou týdenní dobrodružství v Costarice</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis eros a ligula tempus, non eleifend libero blandit. Suspendisse potenti.</p>
+      </article>
+      <article class="news-item">
+        <span class="news-date">Od 05.10.2025 do 26.10.2025</span>
+        <h3>Tří týdenní průzkum Amazonie</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae risus nec sapien convallis egestas, sed fermentum urna vestibulum.</p>
+      </article>
+    </div>
+  </section>
 
+  <section id="knihy" class="section">
+    <h2>Knihy</h2>
+    <div class="books">
+      <div class="book">
+        <img src="images/kniha1.jpg" alt="Kniha 1">
+        <h3>Název knihy 1</h3>
+        <p>Popis knihy 1.</p>
+      </div>
+      <div class="book">
+        <img src="images/kniha2.jpg" alt="Kniha 2">
+        <h3>Název knihy 2</h3>
+        <p>Popis knihy 2.</p>
+      </div>
+      <!-- Další knihy ... -->
+    </div>
+  </section>
 
+  <!-- Martinovo Minikino -->
+  <section id="minikino" class="section">
+    <h2>Martinovo Minikino</h2>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/WVxEMjeCbHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
 
+  <!-- Facebook Feed -->
+  <section id="facebook" class="section">
+    <h2>Nejnovější příspěvky</h2>
+    <div id="fb-root"></div>
+    <div class="fb-page" 
+      data-href="https://www.facebook.com/MartinMykiskaCestyKnihyBesedy"
+      data-tabs="timeline"
+      data-width="500"
+      data-height="700"
+      data-small-header="true"
+      data-adapt-container-width="true"
+      data-hide-cover="false"
+      data-show-facepile="false">
+    </div>
+  </section>
 
-    <section id="aktuality" class="section">
-        <h2>Aktuality</h2>
-        <div class="news">
-          <article class="news-item">
-            <span class="news-date">Od 12.09.2025 do 19.09.2025</span>
-            <h3>Týdenní zájezd do Peru</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel leo ac metus elementum gravida. Proin vitae felis in dolor blandit semper.</p>
-          </article>
-          <article class="news-item">
-            <span class="news-date">Od 20.09.2025 do 03.10.2025</span>
-            <h3>Dvou týdenní dobrodružství v Costarice</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis eros a ligula tempus, non eleifend libero blandit. Suspendisse potenti.</p>
-          </article>
-          <article class="news-item">
-            <span class="news-date">Od 05.10.2025 do 26.10.2025</span>
-            <h3>Tří týdenní průzkum Amazonie</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae risus nec sapien convallis egestas, sed fermentum urna vestibulum.</p>
-          </article>
+  <!-- Reviews Section -->
+  <section id="reviews" class="section">
+    <h2>Recenze a Hodnocení</h2>
+    <div class="reviews-tabs">
+      <button class="tab-btn active" data-tab="books">Knihy</button>
+      <button class="tab-btn" data-tab="tours">Zájezdy</button>
+      <button class="tab-btn" data-tab="lectures">Přednášky</button>
+    </div>
+    <div class="reviews-content">
+      <div id="reviews-display"></div>
+      <form id="review-form" class="review-form">
+        <select name="category" required>
+          <option value="">Vyberte kategorii</option>
+          <option value="books">Knihy</option>
+          <option value="tours">Zájezdy</option>
+          <option value="lectures">Přednášky</option>
+        </select>
+        <input type="text" name="name" placeholder="Vaše jméno" required>
+        <div class="rating">
+          <input type="number" name="rating" min="1" max="5" required>
+          <span>/5 hvězdiček</span>
         </div>
-      </section>
-      
+        <textarea name="review" placeholder="Vaše hodnocení..." required></textarea>
+        <button type="submit">Odeslat hodnocení</button>
+      </form>
+    </div>
+  </section>
 
-      <section id="knihy" class="section">
-        <h2>Knihy</h2>
-        <div class="books">
-        <div class="book">
-            <img src="images/kniha1.jpg" alt="Kniha 1">
-            <h3>Název knihy 1</h3>
-            <p>Popis knihy 1.</p>
-        </div>
-        <div class="book">
-            <img src="images/kniha2.jpg" alt="Kniha 2">
-            <h3>Název knihy 2</h3>
-            <p>Popis knihy 2.</p>
-        </div>
-        <!-- Další knihy ... -->
-        </div>
-
-
-
-    </section>
+  <!-- Contact Form -->
+  <section id="contact-form" class="section">
+    <h2>Kontaktní formulář</h2>
+    <form id="contact" class="contact-form">
+      <div class="form-group">
+        <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Váš email" required>
+      </div>
+      <div class="form-group">
+        <input type="text" id="subject" name="subject" placeholder="Předmět" required>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" placeholder="Vaše zpráva" required></textarea>
+      </div>
+      <button type="submit">Odeslat zprávu</button>
+    </form>
+  </section>
 
   <!-- Sekce Galerie – Zobrazení kategorií -->
   <section id="galerie" class="section">

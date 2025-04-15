@@ -206,3 +206,81 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
+
+// Facebook SDK Integration
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v12.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+// Reviews System
+document.addEventListener('DOMContentLoaded', function() {
+  const reviewForm = document.getElementById('review-form');
+  const reviewsDisplay = document.getElementById('reviews-display');
+  const tabButtons = document.querySelectorAll('.tab-btn');
+
+  // Load reviews from localStorage
+  function loadReviews(category) {
+    const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+    const filteredReviews = reviews.filter(review => review.category === category);
+    
+    reviewsDisplay.innerHTML = filteredReviews.map(review => `
+      <div class="review">
+        <h4>${review.name}</h4>
+        <p>Hodnocení: ${review.rating}/5</p>
+        <p>${review.review}</p>
+      </div>
+    `).join('');
+  }
+
+  // Handle tab switching
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      loadReviews(button.dataset.tab);
+    });
+  });
+
+  // Handle review submission
+  reviewForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(reviewForm);
+    const review = {
+      category: formData.get('category'),
+      name: formData.get('name'),
+      rating: formData.get('rating'),
+      review: formData.get('review'),
+      date: new Date().toISOString()
+    };
+
+    const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+    reviews.push(review);
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+
+    loadReviews(review.category);
+    reviewForm.reset();
+  });
+
+  // Contact Form
+  const contactForm = document.getElementById('contact');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    
+    try {
+      // Here you would typically send to your backend
+      // For demonstration, we'll just show an alert
+      alert('Zpráva byla odeslána! (Zde by běžně šel email na martin@mykiska.cz)');
+      contactForm.reset();
+    } catch (error) {
+      alert('Došlo k chybě při odesílání zprávy.');
+    }
+  });
+
+  // Load initial reviews
+  loadReviews('books');
+});
