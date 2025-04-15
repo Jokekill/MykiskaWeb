@@ -272,12 +272,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const formData = new FormData(contactForm);
     
     try {
-      // Here you would typically send to your backend
-      // For demonstration, we'll just show an alert
-      alert('Zpráva byla odeslána! (Zde by běžně šel email na martin@mykiska.cz)');
-      contactForm.reset();
+      const response = await fetch('https://formspree.io/f/xourgbpw', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        alert('Děkujeme za vaši zprávu! Budeme vás kontaktovat.');
+        contactForm.reset();
+      } else {
+        throw new Error('Odeslání se nezdařilo');
+      }
     } catch (error) {
-      alert('Došlo k chybě při odesílání zprávy.');
+      alert('Došlo k chybě při odesílání zprávy. Prosím zkuste to později.');
     }
   });
 
