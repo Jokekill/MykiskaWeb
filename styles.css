@@ -1,534 +1,436 @@
 /* Reset základních stylů */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  /* Navigační menu */
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
-  }
-  
-  .logo h1 {
-    font-size: 1.5rem;
-    color: #E67E22;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin-left: 1rem;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-  }
-  
-  .nav-links a:hover {
-    color: #E67E22;
-  }
-  
-  /* Hamburger menu pro mobil */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  
-  .hamburger .line {
-    width: 25px;
-    height: 3px;
-    background: #333;
-    margin: 4px;
-  }
-  
-  /* Globálně plynulý scroll */
-html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Hero sekce s úvodní fotkou */
-  #hero {
-    position: relative;
-    height: 100vh;       /* zabírá celou výšku viewportu */
-    overflow: hidden;
-  }
-  
-  /* Slideshow */
-  .slideshow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Fotka na pozadí */
-  .hero-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    object-fit: cover;
-  }
-
-  .hero-bg.active {
-    opacity: 1;
-  }
-
-  /* Tlačítka pro slideshow */
-  .slide-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    z-index: 3;
-    font-size: 1.5rem;
-  }
-
-  .prev-slide {
-    left: 20px;
-  }
-
-  .next-slide {
-    right: 20px;
-  }
-
-  .slide-btn:hover {
-    background: rgba(0, 0, 0, 0.7);
-  }
-  
-  /* Obsah nad fotkou */
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 0 1rem;
-  }
-  
-  .hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  /* Šipka ve spodní části hero sekce */
-  .hero-arrow {
-    position: absolute;
-    bottom: 20px;         /* můžeš upravit podle potřeby */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-  
-  .scroll-arrow {
-    display: inline-block;
-    font-size: 3rem;      /* velikost šipky, dle potřeby uprav */
-    color: #fff;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-  }
-  
-  .scroll-arrow:hover {
-    transform: translateY(5px); /* efekt lehkého posunu při hoveru */
-  }
-  
-  
-  /* Obecné sekce */
-  .section {
-    padding: 4rem 1rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  
-  .section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    color: #333;
-  }
-  
-  /* Karty pro aktivity */
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  }
-  
-  .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .card h3 {
-    margin: 1rem 0 0.5rem;
-    font-size: 1.25rem;
-  }
-  
-  .card p {
-    padding: 0 1rem 1rem;
-    font-size: 0.95rem;
-  }
-  
-  /* Knihy */
-  .book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .book {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    overflow: hidden;
-    text-align: center;
-    padding-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  }
-  
-  .book img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-  
-  .book h3 {
-    margin: 1rem 0 0.5rem;
-    font-size: 1.2rem;
-  }
-  
-  .book p {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Aktuality */
-  .news {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-  
-  .news-item {
-    background: #fff;
-    border-left: 5px solid #E67E22;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  }
-  
-  .news-item .news-date {
-    font-size: 0.9rem;
-    color: #999;
-  }
-  
-  .news-item h3 {
-    font-size: 1.3rem;
-    margin: 0.5rem 0;
-  }
-  
-  /* Galerie – kategorie (na index.html) */
-  .gallery-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-  }
-  
-  .gallery-category-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-  }
-  
-  .gallery-category-card:hover {
-    transform: scale(1.02);
-  }
-  
-  .gallery-category-card a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-  
-  .gallery-category-card .card-image img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .gallery-category-card .card-title {
-    padding: 1rem;
-  }
-  
-  .gallery-category-card .card-title h3 {
-    font-size: 1.2rem;
-  }
-  
-  /* Galerie – fotky v kategoriích (na category.html) */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  
-  .gallery-grid img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-    transition: opacity 0.3s;
-  }
-  
-  .gallery-grid img:hover {
-    opacity: 0.8;
-  }
-  
-  /* Lightbox styl */
-  .lightbox {
-    display: none;                    /* skryto, dokud se neaktivuje */
-    position: fixed;
-    z-index: 9999;                    /* vysoké číslo, aby překrylo vše */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9); /* tmavý overlay */
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .lightbox-content {
-    max-width: 90%;
-    max-height: 80%;
-  }
-  
-  .lightbox .close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  /* Ovládací šipky v lightboxu */
-  .lightbox .prev,
-  .lightbox .next {
-    position: absolute;
-    top: 50%;
-    padding: 16px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #f1f1f1;
-    cursor: pointer;
-    user-select: none;
-    transition: 0.3s;
-  }
-  
-  .lightbox .prev {
-    left: 20px;
-  }
-  
-  .lightbox .next {
-    right: 20px;
-  }
-  
-  .lightbox .prev:hover,
-  .lightbox .next:hover {
-    color: #E67E22;
-  }
-  
-  /* Patička */
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-  
-  footer a {
-    color: #E67E22;
-    text-decoration: none;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-  
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      position: absolute;
-      top: 60px;
-      left: 0;
-      padding: 1rem 0;
-    }
-  
-    /* Přidáme pravidlo pro zobrazení menu, když je třída nav-active přidána */
-    .nav-links.nav-active {
-      display: flex;
-    }
-  
-    .nav-links li {
-      margin: 0.5rem 0;
-      text-align: center;
-    }
-  
-    .hamburger {
-      display: flex;
-    }
-  }
-
-.css
-/* Video Container */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.video-container iframe {
-  position: absolute;
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Navigační menu */
+header {
+  position: fixed;
   top: 0;
-  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: #E67E22;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: #E67E22;
+}
+
+/* Hamburger menu pro mobil */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 4px;
+}
+
+/* Globálně plynulý scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero sekce s úvodní fotkou */
+#hero {
+  position: relative;
+  height: 100vh;       /* zabírá celou výšku viewportu */
+  overflow: hidden;
+}
+
+/* Slideshow */
+.slideshow {
+  position: absolute;
   width: 100%;
   height: 100%;
 }
 
-/* Reviews Section */
-.reviews-tabs {
+/* Fotka na pozadí */
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  object-fit: cover;
+}
+
+.hero-bg.active {
+  opacity: 1;
+}
+
+/* Tlačítka pro slideshow */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 3;
+  font-size: 1.5rem;
+}
+
+.prev-slide {
+  left: 20px;
+}
+
+.next-slide {
+  right: 20px;
+}
+
+.slide-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Obsah nad fotkou */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.tab-btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  background: #f0f0f0;
-  cursor: pointer;
+/* Šipka ve spodní části hero sekce */
+.hero-arrow {
+  position: absolute;
+  bottom: 20px;         /* můžeš upravit podle potřeby */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
-.tab-btn.active {
-  background: #E67E22;
-  color: white;
+.scroll-arrow {
+  display: inline-block;
+  font-size: 3rem;      /* velikost šipky, dle potřeby uprav */
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
-.review-form {
-  max-width: 600px;
-  margin: 2rem auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.scroll-arrow:hover {
+  transform: translateY(5px); /* efekt lehkého posunu při hoveru */
 }
 
-.review-form input,
-.review-form select,
-.review-form textarea {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
 
-.review-form textarea {
-  min-height: 100px;
-}
-
-/* Contact Form */
-.contact-form {
-  max-width: 600px;
+/* Obecné sekce */
+.section {
+  padding: 4rem 1rem;
+  max-width: 1100px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Karty pro aktivity */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.card p {
+  padding: 0 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* Knihy */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.book {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.book img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.book h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.book p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Aktuality */
+.news {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.news-item {
+  background: #fff;
+  border-left: 5px solid #E67E22;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.news-item .news-date {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.news-item h3 {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+/* Galerie – kategorie (na index.html) */
+.gallery-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 0.5rem;
+.gallery-category-card {
+  background: #fff;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
 }
 
-.form-group textarea {
-  min-height: 150px;
+.gallery-category-card:hover {
+  transform: scale(1.02);
 }
 
-button[type="submit"] {
-  padding: 0.75rem 1.5rem;
-  background: #E67E22;
-  color: white;
-  border: none;
-  border-radius: 4px;
+.gallery-category-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.gallery-category-card .card-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.gallery-category-card .card-title {
+  padding: 1rem;
+}
+
+.gallery-category-card .card-title h3 {
+  font-size: 1.2rem;
+}
+
+/* Galerie – fotky v kategoriích (na category.html) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: opacity 0.3s;
 }
 
-button[type="submit"]:hover {
-  background: #d35400;
+.gallery-grid img:hover {
+  opacity: 0.8;
 }
 
+/* Lightbox styl */
+.lightbox {
+  display: none;                    /* skryto, dokud se neaktivuje */
+  position: fixed;
+  z-index: 9999;                    /* vysoké číslo, aby překrylo vše */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9); /* tmavý overlay */
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Ovládací šipky v lightboxu */
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.lightbox .prev {
+  left: 20px;
+}
+
+.lightbox .next {
+  right: 20px;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  color: #E67E22;
+}
+
+/* Patička */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer a {
+  color: #E67E22;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 1rem 0;
+  }
+
+  /* Přidáme pravidlo pro zobrazení menu, když je třída nav-active přidána */
+  .nav-links.nav-active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
